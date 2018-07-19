@@ -20,10 +20,13 @@ RUN groupadd -r alerta --gid=9999 && useradd --no-log-init -r -g alerta --uid=99
 RUN apt-get update && apt-get install -y \
         xmlsec1 \
         git \
-        gcc
+        gcc \
+        libldap2-dev \
+        libsasl2-dev
 
 RUN pip install --no-cache-dir \
         uwsgi \
+        python-ldap \
         pysaml2 \
         alerta \
         alerta-server==$VERSION
