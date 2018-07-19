@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-RUN_ONCE=${_ALERTA_SOURCE_DIR}/.run_once
+RUN_ONCE=/.run_once
 
 # Generate server config, if not supplied
 if [ ! -f "${ALERTA_SVR_CONF_FILE}" ]; then
