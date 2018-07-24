@@ -18,7 +18,6 @@ RUN mkdir -p ${_ALERTA_CONF_DIR}
 RUN groupadd -r alerta --gid=9999 && useradd --no-log-init -r -g alerta --uid=9999 -d ${_ALERTA_APP_DIR} alerta
 
 RUN apt-get update && apt-get install -y \
-        xmlsec1 \
         git \
         gcc \
         libldap2-dev \
@@ -27,7 +26,6 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --no-cache-dir \
         uwsgi \
         python-ldap \
-        pysaml2 \
         alerta \
         alerta-server==$VERSION
 
